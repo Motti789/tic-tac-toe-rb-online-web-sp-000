@@ -20,6 +20,7 @@ end
 display_board(board)
 
 def input_to_index(user_input)
+  binding.pry
   user_input.to_i - 1
 end
 #
@@ -100,4 +101,12 @@ def play(board)
   elsif draw?(board)
     puts "Cat's Game!"
   end
+until full?(board)
+  turn(board)
+if winner(board)
+  puts "congratulate"
+else draw?(board)
+  puts "draw"
+end
+end
 end
